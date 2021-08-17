@@ -1,18 +1,28 @@
 # twitterwipe
 
-1. run: pip install -r requirements.txt in your shell
+1.  run: pip3 install -r requirements.txt
 
-2. Authorization - Pt. I<br>
-get your consumer keys from twitter. copy keys.example.json to keys.json, and put your consumer keys into the json.
-if you have app_key & app_secret, put those in now and skip to step (3).
+2.  User Authorization:
 
-3. Authorization - Pt. II<br>
-run auth.py. it will print your app_key and app_secret to console. put those into your keys.json. this feels bad to do; there's probably a more secure way of doing this (i think you can get these from the twitter site, but also think that's being deprecated). feel free to do this another way, all you need are the app_key and app_secret.
+Go to <https://dev.twitter.com/apps/new> and log in, if necessary, Supply the necessary required fields, accept the Terms Of Service, and solve the CAPTCHA. Submit the form, Go to the API Keys tab, there you will find your Consumer key and Consumer secret keys. Copy the consumer key (API key) and consumer secret from the screen into our application.
 
-4. Configure<br>
-put in the number of days worth of past data (starting from runtime) you want to preserve into config.yaml. anything further in the past than this time period will be deleted (save some favorites; please see the epilogue).
+3.  App Authorization:
 
-5. run the program with python:<br>
-python twitterwipe.py
+run auth.py. it will print a link to visit with a code to enter, your app_key and app_secret will be printed to the console. put those into your keys.json.
 
-6. logs will be written to logs.logs, which is registered in the .gitignore.
+4.  Configure:
+
+Add the number of days worth of past data (starting from runtime) that you want to preserve into config.yaml.
+Anything further in the past than this time period will be deleted.
+
+5.  Run the program:
+
+python3 twitterwipe.py
+
+6.  logs:
+
+Logs will be written to `log.log`
+
+7.  .gitignore
+
+Make sure to add log.log and keys.json to .gitignore!
